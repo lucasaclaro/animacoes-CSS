@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px
+}
+
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.conteudo h1 {
+    margin: 5vh 0vh;
+    text-align: center;
+}
+
+.animacoes {
+    display: flex;
+    justify-content: center;
+    background: rgba(128, 128, 128, 0.377);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.493);
+}
+
+.box {
+    outline: 5px solid black;
+}
+
+img {
+    /* transform: translateX(100px);  movimenta para a direita */
+    /* transform: translateX(-100px); movimenta para a esquerda */
+    /* transform: translateY(100px);  movimenta para baixo */
+    /* transform: translateY(-100px); movimenta para cima */
+    /* transform: scale(2); aumenta o tamanho */
+    /* transform: rotate(45deg); rotaciona a imagem*/
+    /* transform: skewx(20deg); inclina a imagem */
+
+}
