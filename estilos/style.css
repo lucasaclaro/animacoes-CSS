@@ -20,8 +20,11 @@
 .animacoes {
     display: flex;
     justify-content: center;
+    align-items: center;
     background: rgba(128, 128, 128, 0.377);
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.493);
+    margin-bottom: 5vh;
+    padding: 5vh 0vw;
 }
 
 .box {
@@ -37,4 +40,59 @@ img {
     /* transform: rotate(45deg); rotaciona a imagem*/
     /* transform: skewx(20deg); inclina a imagem */
 
+}
+
+.boxOne {
+    background: rgb(41, 41, 179);
+    height: 40vh;
+    width: 20vw;
+    transition-property: background-color, border-radius; /* escolher a propriedade que irá passar pela transição */
+    transition-duration: 2s1 1.5s; /* escolher a duração da transição */
+    /* transition-delay: 0.5s; o tempo de espera para iniciar a ação */
+    /* transition-timing-function: ease-in; dar uma suavizada no início ou no fim da animação */
+}
+
+.boxOne:hover {
+    border-radius: 50%;
+    background-color: orangered;
+}
+
+.boxTwo {
+    display: flex;
+    align-items: center;
+    background-image: url("../imagens/fundo-ceu.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    width: 100vw;
+}
+
+.boxTwo img {
+    height: 150px;
+    width: 200px;
+    animation-name: fly;
+    animation-duration: 2s;
+    /* animation-timing-function: ; o próprio CSS possui algumas informações pré-definidas */
+    /* animation-delay ; tempo que a animação demora para iniciar */ 
+    /* animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6); outra forma de configurar a animação para que dure um tempo diferenciado*/
+    animation-iteration-count: infinite; /* quanto tempo a duração irá ficar repetindo */
+    animation-direction: alternate; /* a animação vai e voltar */
+    /* animation-fill-mode: forwards; a animação para no estágio final. Existem outras opções */
+
+
+}
+
+.boxTwo img:hover {
+    animation-play-state: paused; /* para a animação */ 
+}
+
+
+@keyframes fly {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(100vw - 200px)); /* tamanho total da tela menos o tamanho do avião */
+    }
 }
