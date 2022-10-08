@@ -6,6 +6,7 @@
 }
 
 
+
 .conteudo {
     display: flex;
     justify-content: center;
@@ -94,5 +95,181 @@ img {
 
     100% {
         transform: translateX(calc(100vw - 200px)); /* tamanho total da tela menos o tamanho do avião */
+    }
+}
+
+
+
+.papelDeParede {
+    animation: gradient 20s ease infinite;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat;
+    background-size: 300% 300%;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100vh;
+    font-size: 300%;
+}
+
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+
+
+.animacoesBall{
+    margin-left: 10vw;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.521);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url(../imagens/quadra.jpg);
+    background-size: cover;
+    height: 93vh;
+    width: 78vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 5vh 0vw;
+}
+
+#imagemBall{
+    animation: jump-ball 1s ease alternate infinite;
+    width: 100px;
+    margin-left: 30px;
+}
+
+
+@keyframes jump-ball {
+    to {
+transform: translateY(40px);
+    }
+}
+
+
+
+.boxFour {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.747);
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+.textoOculto {
+    animation: piscando 500ms steps(40)  infinite normal, aparencendoTexto 4s steps(40) 1s normal both; /* a opção steps quebra quadro a quadro dando a impressão de uma máquina de escrever. Para deixar fluído é só retirar essa opção */
+    color: rgba(255, 255, 255, 0.726);
+    font-family: monospace;
+    font-size: 3em;
+    border-right: 2px solid rgba(255, 255, 255, 0.726);
+    white-space: nowrap; /* não quebra linha */
+    overflow: hidden; /* se não tem uma largura suficiente ele esconde */
+}
+
+
+@keyframes aparencendoTexto {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 6.8em;
+    }
+}
+
+
+@keyframes piscando {
+    from {
+        border-right-color: 255, 255, 255, 0.726;
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+
+.textoOcultoDois {
+    animation: textoAparecendo 0s 1.1s both;
+    color: white;
+    font-size: 3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 0;
+}
+
+.boxFive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.747);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.boxFiveDentro::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #23a6d5;
+    transform: translateX(-100%);
+    animation: aumentarBloco .5s .6s both,moverBloco .5s 1.1s both;
+}
+
+
+
+@keyframes textoAparecendo {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes moverBloco {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes aumentarBloco {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
     }
 }
